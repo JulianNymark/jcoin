@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="./README/j2coin.png"/>
+  <img src="./README/j2coin2.png"/>
 </p>
 
 <sub>*turns out there already was a 'jcoin' out there, hence the 2</sub>
