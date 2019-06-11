@@ -4,6 +4,7 @@ interface BlockContent {
     serial: number;
     previousHash: string;
     data: string; // ledger goes here
+    guess: string;
 }
 
 export class Block {
@@ -14,11 +15,12 @@ export class Block {
     }
 
     public getRawHashee(guess: string): string {
-        return JSON.stringify(this.content) + guess;
+        this.content.guess = guess;
+        return JSON.stringify(this.content);
     }
 
     public hash = (guess: string): string => {
-        const toHash = JSON.stringify(this.content) + guess;
+        const toHash = this.getRawHashee(guess);
         const hashed = Sha256.hash(toHash);
         return hashed;
     }
